@@ -1,0 +1,21 @@
+<Interaction>
+<Dialogue>
+  <Recognition>
+     <Words>This</Words>
+     <Words>is</Words>
+     <Words>a</Words>
+     <Words>enter</Words>
+     <Words>face</Words>
+     <Words>test</Words>
+  </Recognition>
+  <Say>I recognised you are at enter face</Say>
+</Dialogue>
+<Dialogue>
+  <Recognition>
+     <Words>2014</Words>
+     <Words>June</Words>
+     <Words>We are here</Words>
+  </Recognition>
+  <Say>I recognised this extra info</Say>
+</Dialogue>
+</Interaction>
