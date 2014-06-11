@@ -1,0 +1,1 @@
+../opt/hts/bin/HVite -H julius/macros -H julius/hmmdefs -C HTK.config -w wdnet/network.htk -p 0.0 -s 5.0 julius/dict julius/tiedlist
