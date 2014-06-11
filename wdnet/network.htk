@@ -5,8 +5,8 @@ I=1    W=!NULL
 I=2    W=SENT-START          
 I=3    W=SIL                 
 I=4    W=!NULL               
-I=5    W=HELLO               
-I=6    W=GOODBYE             
+I=5    W=hello               
+I=6    W=goodbye             
 I=7    W=SENT-END            
 J=0     S=7    E=1    
 J=1     S=0    E=2    

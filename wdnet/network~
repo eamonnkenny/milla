@@ -1,5 +1,5 @@
 (SENT-START <
-SIL
+sil
 | hello
 | goodbye
 > SENT-END )
