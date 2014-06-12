@@ -1,7 +1,7 @@
 <Interaction>
 <Dialogue>
   <Recognition>
-     <Words>This</Words>
+     <Words>this</Words>
      <Words>is</Words>
      <Words>a</Words>
      <Words>enter</Words>
@@ -13,8 +13,8 @@
 <Dialogue>
   <Recognition>
      <Words>2014</Words>
-     <Words>June</Words>
-     <Words>We are here</Words>
+     <Words>june</Words>
+     <Words>we are here</Words>
   </Recognition>
   <Say>I recognised this extra info</Say>
 </Dialogue>

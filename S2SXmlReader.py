@@ -6,6 +6,7 @@ import time
 import datetime
 import libxml2
 from lxml import etree
+from kaldi_subprocess import KaldiProcess
 import re
 import os
 
@@ -23,18 +24,38 @@ class SpeechToSpeechPrototype:
     root = etree.parse(fileName)
     dialogues = root.findall("Dialogue")
 
+    # start up the subprocess relating to kaldi
+    # this will capture the standard output
+    kaldiObject = KaldiProcess("./kaldi-using-voxforge-data.sh")
+
     dialogueCount = 0
     for dialogue in dialogues:
       dialogueCount = dialogueCount + 1
       elements = dialogue.getchildren()
       recognition = elements[0] 
 
-      sentences = recognition.getchildren()
+      words = recognition.getchildren()
+      # this is looking at the children of recognition which are <Words>
+      keywords = []
+      for word in words:
+        keywords.append( word.text )
+      print keywords
+
+      # next look for a recognised word in our grammar list
+      counter = 0
+      while True:
+        counter = counter + 1
+        recognisedLine = kaldiObject.getline()
+        if recognisedLine.lower() in keywords:
+          print "I recognised the line: ", recognisedLine
+          break;
 
       say = elements[1] 
       self.writeSpeechSentences( say.text )
       
-      os.system( '../opt/cerevoice/basictts.sh ' + os.getcwd() + '/cerevoice_input_file.txt' )
+      os.system( '../opt/cerevoice/basictts.sh ' + os.getcwd() + '/cerevoice_input_file.txt 2>/dev/null 1>/dev/null' )
+
+    kaldiObject.destroy()
 
     #dialogues = root.Element("Dialogue")
     #for dialogue in dialogues:
