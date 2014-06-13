@@ -27,7 +27,8 @@ class SpeechToSpeechPrototype:
 
     # start up the subprocess relating to kaldi
     # this will capture the standard output
-    kaldiObject = KaldiProcess("./kaldi-using-voxforge-data.sh")
+    #kaldiObject = KaldiProcess("./kaldi-using-voxforge-data.sh")
+    kaldiObject = KaldiProcess("./kaldi-gstreamer-voxforge-data.sh")
 
     dialogueCount = 0
     for dialogue in dialogues:
