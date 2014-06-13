@@ -17,8 +17,9 @@ class KaldiProcess:
   def getline(self):
     output = self.proc.stdout.readline()
     if output.rstrip() != "":
-      print "Reading: " +  output.rstrip()
-    return output.rstrip()
+      print "Reading: (" +  output.rstrip().lstrip() + ")"
+
+    return output.rstrip().lstrip()
 
   def destroy(self):
     os.killpg( self.pid, signal.SIGTERM )
