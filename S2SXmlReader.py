@@ -7,6 +7,7 @@ import datetime
 import libxml2
 from lxml import etree
 from kaldi_subprocess import KaldiProcess
+from cerevoice_subprocess import CerevoiceProcess
 import re
 import os
 
@@ -53,7 +54,7 @@ class SpeechToSpeechPrototype:
       say = elements[1] 
       self.writeSpeechSentences( say.text )
       
-      os.system( '../opt/cerevoice/basictts.sh ' + os.getcwd() + '/cerevoice_input_file.txt 2>/dev/null 1>/dev/null' )
+      CerevoiceProcess( "./cerevoice-using-heather-voice.sh" )
 
     kaldiObject.destroy()
 
